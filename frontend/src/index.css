@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.day-picker.rdp-root{
+    --rdp-accent-colors:#0299b1;
+    --rdp-accent-background-color:#dffbff;
+    --rdp-day_button-border-radius:8px;
+    --rdp-selected-font:bold medium var(--rdp-font-family);
+}
+
+@layer base{
+    
+    html{
+        font-family: "Poppins","sans-serif";
+    }
+    body{
+        @apply bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark overflow-x-hidden;
+    }
+}
+
+.scrollbar::-webkit-scrollbar{
+    width: 3px;
+    height: 3px;
+}
+.scrollbar::-webkit-scrollbar-thumb{
+    background-color: #057c8e;
+    border-radius: 3px;
+}
+.scrollbar::-webkit-scrollbar-track{
+    background-color: rgb(172,201,229);
+}
+
+@layer components{
+    .input-box{
+        @apply w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-text-light dark:text-text-dark focus:border-primary-light dark:focus:border-primary-dark focus:ring-2 focus:ring-primary-light/20 dark:focus:ring-primary-dark/20 outline-none transition-all mb-4;
+    }
+    .btn-primary{
+        @apply w-full py-3 rounded-lg font-medium transition-colors duration-200;
+    }
+    .btn-light{
+        @apply bg-surface-light dark:bg-surface-dark hover:bg-gray-50 dark:hover:bg-gray-800;
+    }
+    .login-ui-box{
+        @apply absolute w-[500px] h-[500px] rounded-full bg-cyan-100/50 dark:bg-cyan-900/20 blur-3xl;
+    }
+    .model-box{
+        @apply w-[80vw] md:w-[40%] h-[80vh] bg-white rounded-lg mx-auto mt-14 p-5 overflow-y-scroll scrollbar z-50;
+    }
+    .icon-btn{
+        @apply text-[22px] text-slate-300 cursor-pointer hover:text-red-500;
+    }
+    .btn-small{
+        @apply flex items-center gap-1 text-xs font-medium bg-cyan-50 text-primary-light dark:text-primary-dark shadow-cyan-100/0 border border-cyan-100 hover:bg-primary-light dark:hover:bg-primary-dark hover:text-white rounded px-3 py-[3px];
+    }
+
+    .btn-danger{
+        @apply bg-rose-50 text-rose-500 shadow-rose-100/0 border border-rose-100 hover:bg-rose-500 hover:text-white;
+    }
+
+    .signup-ui-box {
+        @apply absolute w-[500px] h-[500px] rounded-full bg-cyan-100/50 dark:bg-cyan-900/20 blur-3xl;
+    }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Calendar Styles */
+.day-picker {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.day-picker .rdp-button:hover:not([disabled]) {
+  @apply bg-sky-100 dark:bg-sky-800;
+}
+
+.day-picker .rdp-day_selected:not([disabled]) {
+  @apply bg-sky-500 dark:bg-sky-600 text-white font-medium;
+}
+
+.day-picker .rdp-button {
+  @apply w-10 h-10 text-gray-700 dark:text-gray-200;
+}
+
+.day-picker .rdp-day_today {
+  @apply font-bold text-sky-600 dark:text-sky-400;
+}
+
+.day-picker .rdp-head_cell {
+  @apply text-gray-500 dark:text-gray-400 font-medium;
+}
+
+.day-picker .rdp-dropdown {
+  @apply bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-md border border-gray-200 dark:border-gray-700;
+}
+
+.day-picker .rdp-dropdown_month {
+  @apply py-1 px-2;
+}
+
+.day-picker .rdp-dropdown_year {
+  @apply py-1 px-2;
+}
+
+.day-picker .rdp-caption {
+  @apply mb-4;
+}
+
+/* Mobile Calendar Container */
+@media (max-width: 768px) {
+  .day-picker .rdp {
+    @apply !w-full flex justify-center;
+  }
+  
+  .day-picker .rdp-months {
+    @apply !w-full;
+  }
+  
+  .day-picker .rdp-month {
+    @apply !w-full;
+  }
+  
+  .day-picker .rdp-table {
+    @apply !w-full;
+  }
+  
+  .day-picker .rdp-cell {
+    @apply !p-0;
+  }
+  
+  .day-picker .rdp-button {
+    @apply !w-full !h-10;
+  }
+}
+
+/* Toast Styles */
+.Toastify__toast-container {
+  @apply !w-auto !min-w-[300px] !max-w-[350px] !p-3 !top-4 !right-4;
+}
+
+.Toastify__toast {
+  @apply !min-h-0 !p-3 !rounded-xl !shadow-lg !mb-2 !overflow-hidden;
+}
+
+.Toastify__toast--success {
+  @apply !bg-gradient-to-r !from-green-500 !to-emerald-500 !text-white !border-none !shadow-green-500/30;
+}
+
+.Toastify__toast--error {
+  @apply !bg-gradient-to-r !from-red-500 !to-rose-500 !text-white !border-none !shadow-red-500/30;
+}
+
+.Toastify__toast--info {
+  @apply !bg-gradient-to-r !from-blue-500 !to-sky-500 !text-white !border-none !shadow-blue-500/30;
+}
+
+.Toastify__toast-body {
+  @apply !p-0 !m-0 !text-sm !font-medium !items-center;
+}
+
+.Toastify__progress-bar {
+  @apply !h-1 !bg-white/30;
+}
+
+.Toastify__close-button {
+  @apply !text-white/80 !opacity-100 !self-center !p-1 !ml-2 hover:!bg-white/10 !rounded;
+}
+
+.Toastify__close-button > svg {
+  @apply !w-4 !h-4;
+}

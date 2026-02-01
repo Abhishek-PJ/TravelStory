@@ -1,0 +1,6 @@
+{
+    "config": {
+        "port": 5000,
+        "corsOrigins": ["http://localhost:3000", "http://localhost:5173"]
+    }
+}
