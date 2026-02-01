@@ -35,7 +35,7 @@ const Navbar = ({ userInfo, searchQuery, setSearchQuery, onSearchNote, handleCle
           <div className="flex items-center">
             <img src={LOGO} alt="" className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover" />
             <p className="text-lightCoral font-bold font-mountain text-xl sm:text-2xl">
-              Timeless <span className="text-primary-light dark:text-primary-dark">Tale</span>
+              Trail<span className="text-primary-light dark:text-primary-dark">Tales</span>
             </p>
           </div>
 
